@@ -128,8 +128,88 @@ class _HomePageState extends State<HomePage> {
                       return Padding(
                         padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                         child: Container(
-                          height: 300,
-                          color: Colors.purple,
+                          height: 450,
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 50,
+                                child: Row(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.all(5),
+                                      child: AspectRatio(
+                                        aspectRatio: 1,
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(50),
+                                          child: Image.network(
+                                            'https://source.unsplash.com/random?korea=$index',
+                                            fit: BoxFit.cover
+                                          )
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsets.fromLTRB(5, 3, 0, 3),
+                                        child: Align(
+                                          alignment: Alignment.centerLeft,
+                                          child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Text('연합뉴스', style: TextStyle(fontWeight: FontWeight.bold)),
+                                              Text('1일')
+                                            ]
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Column(
+                                      children: [
+                                        Expanded(
+                                          child: Row(
+                                            children: [
+                                              IconButton(
+                                                onPressed: (){
+
+                                                },
+                                                icon: Icon(Icons.more_horiz)
+                                              ),
+                                              IconButton(
+                                                onPressed: (){
+
+                                                },
+                                                icon: Icon(Icons.close)
+                                              )
+                                            ]
+                                          ), flex: 1
+                                        ),
+                                        Expanded(
+                                          child: Container(), flex: 1
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
+                              ),
+                              Container(
+                                child: TextField(
+                                  maxLines: 5,
+                                  decoration: InputDecoration(
+
+                                  )
+                                )
+                              ),
+                              Expanded(
+                                child: AspectRatio(
+                                  aspectRatio: 16 / 9,
+                                  child: Image.network(
+                                    'https://source.unsplash.com/random?sea=$index',
+                                    fit: BoxFit.cover
+                                  ),
+                                ),
+                              )
+                            ]
+                          )
                         ),
                       );
                     },
